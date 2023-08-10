@@ -1,0 +1,67 @@
+1.Print 
+#!/bin/bash
+# set the STRING variable
+STRING="Hello World!"
+# print the contents of the variable on screen
+echo $STRING
+
+2.Compare string
+
+#!bin/bash
+read -p "enter strings:" str1 str2
+if [ $str1 == $str2 ]
+then
+        echo "equal"
+else
+        echo "not equal"
+fi
+
+3.Find Length
+#!bin/bash
+read -p "enter string" Str
+length=${#Str}
+echo "Length is" $length
+
+
+
+4.Reverse String
+#!/bin/bash
+read -p "Enter String" s
+strlen=${#s}
+for ((i=$strlen-1; i>=0; i--));
+do
+        revstr=$revstr${s:$i:1}
+done
+echo "Given String: $s"
+echo "Reverse String: $revstr"
+
+
+5.Lowercase to Uppercase
+#!/bin/bash
+read -p "Enter String" str
+echo "$str" | tr 'a-z' 'A-Z'
+
+
+6.Find number of vowels in given string
+#!/bin/bash
+read -p "Enter String" str
+vowCount=$(echo $str | grep -o "[aeiou]" |wc --lines)
+echo "the given string has $vowCount vowels."
+
+
+7.Replace a character in given string
+#!/bin/bash
+read -p "Enter String" str
+echo $str
+final=${str//[a]/b}
+echo $final
+
+8.Find an occurence of a character in given string
+#!/bin/bash
+var="any given string"
+N=${#var}
+G=${var//g/}
+G=${#G}
+(( G = N - G ))
+echo $G
+
